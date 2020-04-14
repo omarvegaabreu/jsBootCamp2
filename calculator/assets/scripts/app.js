@@ -19,20 +19,25 @@ function calculateResults(calculationType) {
   }
 
   //runs calculation type
-  if (calculationType === "ADD") {
-    currentResult += enteredNumber;
-    mathOperator = "+";
-  } else if (calculationType === "SUBTRACT") {
-    currentResult -= enteredNumber;
-    mathOperator = "-";
-  } else if (calculationType === "MULTIPLY") {
-    currentResult *= enteredNumber;
-    mathOperator = "*";
-  } else if (calculationType === "DIVIDE") {
-    currentResult /= enteredNumber;
-    mathOperator = "/";
-  } else {
-    return;
+  switch (calculationType) {
+    case "ADD":
+      currentResult += enteredNumber;
+      mathOperator = "+";
+      break;
+    case "SUBTRACT":
+      currentResult += enteredNumber;
+      mathOperator = "+";
+      break;
+    case "MULTIPLY":
+      currentResult *= enteredNumber;
+      mathOperator = "*";
+      break;
+    case "DIVIDE":
+      currentResult /= enteredNumber;
+      mathOperator = "/";
+      break;
+    default:
+      return;
   }
   writeToLog(calculationType, initialResult, enteredNumber, currentResult);
   createAndWriteOutput(mathOperator, initialResult, enteredNumber);

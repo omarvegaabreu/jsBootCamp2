@@ -48,15 +48,22 @@ function writeToLog(event, value, monsterHealth, playerHealth) {
   ) {
     return;
   }
-  //checks for event type
-  if (event === LOG_EVENT_PLAYER_ATTACK) {
-    logEntry.target = "MONSTER";
-  } else if (event === LOG_EVENT_PLAYER_STRONG_ATTACK) {
-    logEntry.target = "MONSTER";
-  } else if (event === LOG_EVENT_MONSTER_ATTACK) {
-    logEntry.target = "PLAYER";
-  } else if (event === LOG_EVENT_PLAYER_HEAL) {
-    logEntry.target = "PLAYER";
+
+  switch (event) {
+    case LOG_EVENT_PLAYER_ATTACK:
+      logEntry.target = "MONSTER";
+      break;
+    case LOG_EVENT_PLAYER_STRONG_ATTACK:
+      logEntry.target = "MONSTER";
+      break;
+    case LOG_EVENT_MONSTER_ATTACK:
+      logEntry.target = "PLAYER";
+      break;
+    case LOG_EVENT_PLAYER_HEAL:
+      logEntry.target = "PLAYER";
+    default:
+      logEntry = {};
+      break;
   }
   battleLog.push(logEntry);
 }
@@ -118,15 +125,13 @@ function endRound() {
 }
 
 function attackMonster(mode) {
-  let maxDamage;
-  let logEvent;
-  if (mode === MODE_ATTACK) {
-    maxDamage = ATTACK_VALUE;
-    logEvent = LOG_EVENT_PLAYER_ATTACK;
-  } else if (mode === MODE_STRONG_ATTACK) {
-    maxDamage = STRONG_ATTACK_VALUE;
-    logEvent = LOG_EVENT_PLAYER_STRONG_ATTACK;
-  }
+  const maxDamage = mode === MODE_ATTACK ? ATTACK_VALUE : STRONG_ATTACK_VALUE;
+
+  const logEvent =
+    mode === MODE_ATTACK
+      ? LOG_EVENT_PLAYER_ATTACK
+      : LOG_EVENT_PLAYER_STRONG_ATTACK;
+
   const damage = dealMonsterDamage(maxDamage);
   currentMonsterHealth -= damage;
 
@@ -162,8 +167,23 @@ function healPlayerHandler() {
   endRound();
 }
 
+let i = 0; //external index forOf Loop
 function printLogHandler() {
-  console.log(battleLog);
+  for (const logEntry of battleLog) {
+    console.log(`# ${i}`);
+    for (const key in logEntry) {
+      console.log(`${key}:${logEntry[key]}`);
+    }
+    i++;
+  }
+
+  // for (let i = 0; i < 3; i++) {
+  //   console.log("for loop");
+  // }
+  // for (let i = 10; i >= 0; i--) {
+  //   console.log(battleLog[i]);
+  // }
+  // console.log(battleLog);
 }
 
 attackBtn.addEventListener("click", attackHandler);
