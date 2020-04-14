@@ -167,16 +167,20 @@ function healPlayerHandler() {
   endRound();
 }
 
-let i = 0; //external index forOf Loop
 function printLogHandler() {
-  for (const logEntry of battleLog) {
-    console.log(`# ${i}`);
-    for (const key in logEntry) {
-      console.log(`${key}:${logEntry[key]}`);
-    }
-    i++;
-  }
-
+  // for (let i = 0; i < 3; i++) {
+  //   console.log("--------");
+  // }
+  // for (let i = 10; i > 0; i--) {
+  //   console.log(i);
+  // }
+  // for (const logEntry of battleLog) {
+  //   console.log(`# ${i}`);
+  //   for (const key in logEntry) {
+  //     console.log(`${key}:${logEntry[key]}`);
+  //   }
+  //   i++;
+  // }
   // for (let i = 0; i < 3; i++) {
   //   console.log("for loop");
   // }
