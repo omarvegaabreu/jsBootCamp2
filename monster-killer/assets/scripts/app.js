@@ -1,3 +1,4 @@
+"use strict";
 //hard coded constant values
 const ATTACK_VALUE = 10;
 const STRONG_ATTACK_VALUE = 15;
