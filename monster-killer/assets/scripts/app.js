@@ -20,17 +20,22 @@ let chosenMaxLife = parseInt(enteredValue);
 let currentMonsterHealth = chosenMaxLife;
 let currentPlayerHealth = chosenMaxLife;
 let hasBonusLife = true;
+let lastLoggedEntry;
 
-//check if chosenMaxLife is a number
-if (Number.isNaN(chosenMaxLife) || chosenMaxLife <= 0) {
+try {
+  //check if chosenMaxLife is a number
+  if (Number.isNaN(chosenMaxLife) || chosenMaxLife <= 0) {
+    chosenMaxLife = 100;
+  }
+  adjustHealthBars(chosenMaxLife);
+} catch (error) {
   chosenMaxLife = 100;
+  alert("Invalid user input");
 }
-
-adjustHealthBars(chosenMaxLife);
 
 function writeToLog(event, value, monsterHealth, playerHealth) {
   //log entry default values
-  const logEntry = {
+  let logEntry = {
     event: event,
     value: value,
     target: "", //will be set in if(event)
@@ -168,26 +173,23 @@ function healPlayerHandler() {
 }
 
 function printLogHandler() {
-  // for (let i = 0; i < 3; i++) {
-  //   console.log("--------");
-  // }
-  // for (let i = 10; i > 0; i--) {
-  //   console.log(i);
-  // }
-  // for (const logEntry of battleLog) {
-  //   console.log(`# ${i}`);
-  //   for (const key in logEntry) {
-  //     console.log(`${key}:${logEntry[key]}`);
-  //   }
-  //   i++;
-  // }
-  // for (let i = 0; i < 3; i++) {
-  //   console.log("for loop");
-  // }
-  // for (let i = 10; i >= 0; i--) {
-  //   console.log(battleLog[i]);
-  // }
-  // console.log(battleLog);
+  //to print battle log the the console
+  let i = 0;
+  //1st loop to show index
+  for (const logEntry of battleLog) {
+    //condition to print battle log
+    if ((!lastLoggedEntry && lastLoggedEntry !== 0) || lastLoggedEntry < i) {
+      console.log(`#${i}`);
+      //nested loop to print key value pair of logEntry
+      for (const key in logEntry) {
+        console.log(`${key} => ${logEntry[key]}`);
+      }
+      lastLoggedEntry = i;
+      break;
+    }
+
+    i++;
+  }
 }
 
 attackBtn.addEventListener("click", attackHandler);
