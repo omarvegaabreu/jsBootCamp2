@@ -23,6 +23,11 @@ let currentPlayerHealth = chosenMaxLife;
 let hasBonusLife = true;
 let lastLoggedEntry;
 
+if (enteredValue === null) {
+  alert(`APPLICATION CANCELED: If you want to test the app, refresh the page and enter your HP choice or simply hit ok. Thank you for viewing - Omar Vega"
+  `);
+}
+
 try {
   //check if chosenMaxLife is a number
   if (Number.isNaN(chosenMaxLife) || chosenMaxLife <= 0) {
