@@ -143,3 +143,38 @@
 
 // console.log(sortPrice);
 // console.log(sortPrice.reverse());
+
+/***
+ * //array.filter() 
+ * The filter() method creates a new array with all elements that 
+ * pass the test implemented by the provided function.
+
+  return: 
+  A new array with the elements that pass the test. 
+  If no elements pass the test, an empty array will be returned
+*/
+// const prices = [12.99, 5.99, 3.99, 4.99];
+// const filteredPrices = prices.filter((price, index, prices) => {
+//   return price > 5;
+// });
+
+// console.log(`filter: ${filteredPrices}`);
+
+// const sum = prices.reduce(
+//   (previousValue, currentValue) => previousValue + currentValue,
+//   0
+// );
+// console.log(sum);
+const originalArray = [{ price: 10.99 }, { price: 5.99 }, { price: 29.99 }];
+const transformedArray = originalArray.map((obj) => obj.price); // produces [10.99, 5.99, 29.99]
+const sum = transformedArray.reduce((sumVal, curVal) => sumVal + curVal, 0); // => 46.97
+
+const numbers = [{ number: 1 }, { number: 2 }, { number: 3 }];
+const transformedNumbers = numbers.map((value) => value.number);
+
+const reducedNumbers = transformedNumbers.reduce(
+  (sumValue, CurrentValue) => sumValue + CurrentValue,
+  0
+);
+
+console.log(reducedNumbers);
