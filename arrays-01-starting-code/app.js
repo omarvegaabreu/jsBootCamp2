@@ -100,3 +100,46 @@
 //   //flip value to return true meaning it was false
 //   console.log("not includes in comparison operator");
 // }
+
+// const prices = [1.99, 2.99, 3.99, 4.99, 5.0];
+// const tax = 0.7;
+// const taxAdjustedPrices = [];
+
+// prices.forEach((price, index, pricesArray) => {
+//   const taxedPriceObject = {
+//     index: index,
+//     price: price,
+//     taxedPrice: price * tax,
+//   };
+
+//   taxAdjustedPrices.push(taxedPriceObject);
+// });
+
+// console.log(taxAdjustedPrices);
+// const prices = [12.99, 5.99, 3.99, 4.99];
+// const tax = 0.07;
+
+// const priceWithTaxes = prices.map((price, index) => {
+//   const priceObject = {
+//     index: index,
+//     price: price,
+//     totalPrice: price * tax + price,
+//   };
+//   return priceObject;
+// });
+// console.log(priceWithTaxes);
+// console.log(`not sorted prices ${prices}`);
+// const sortPrice = prices.sort((a, b) => {
+//   if (a > b) {
+//     return 1;
+//   } else if (a === b) {
+//     return 0;
+//   } else if (a < b) {
+//     return -1;
+//   } else {
+//     console.log("error");
+//   }
+// });
+
+// console.log(sortPrice);
+// console.log(sortPrice.reverse());
