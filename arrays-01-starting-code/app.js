@@ -165,16 +165,33 @@
 //   0
 // );
 // console.log(sum);
-const originalArray = [{ price: 10.99 }, { price: 5.99 }, { price: 29.99 }];
-const transformedArray = originalArray.map((obj) => obj.price); // produces [10.99, 5.99, 29.99]
-const sum = transformedArray.reduce((sumVal, curVal) => sumVal + curVal, 0); // => 46.97
+// const originalArray = [{ price: 10.99 }, { price: 5.99 }, { price: 29.99 }];
+// const transformedArray = originalArray.map((obj) => obj.price); // produces [10.99, 5.99, 29.99]
+// const sum = transformedArray.reduce((sumVal, curVal) => sumVal + curVal, 0); // => 46.97
 
-const numbers = [{ number: 1 }, { number: 2 }, { number: 3 }];
-const transformedNumbers = numbers.map((value) => value.number);
+// const numbers = [{ number: 1 }, { number: 2 }, { number: 3 }];
+// const transformedNumbers = numbers.map((value) => value.number);
 
-const reducedNumbers = transformedNumbers.reduce(
-  (sumValue, CurrentValue) => sumValue + CurrentValue,
-  0
-);
+// const reducedNumbers = transformedNumbers.reduce(
+//   (sumValue, CurrentValue) => sumValue + CurrentValue,
+//   0
+// );
 
-console.log(reducedNumbers);
+// console.log(reducedNumbers);
+// const data = "New York;10.99;Time;10.30";
+// const dataSplit = data.split(";");
+// console.log(dataSplit);
+// const dataPrice = dataSplit[1];
+// console.log(dataPrice);
+
+// const names = ["Omar", "Vega", "Canuto", "Jose"];
+// const fullName = names.join(" ");
+// console.log(fullName);
+// const name = ["omar", "abigail", "rosely", "papa"];
+// const nameFragments = [...name];
+// name.push("jose jose");
+// console.log(name);
+
+// console.log(nameFragments);
+// const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// console.log(Math.min(numbers));
