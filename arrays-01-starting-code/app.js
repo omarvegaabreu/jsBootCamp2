@@ -195,3 +195,15 @@
 // console.log(nameFragments);
 // const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 // console.log(Math.min(numbers));
+
+/***
+ * ARRAY DESTRUCTURING
+ */
+// const nameData = ["Omar", "Vega", 38, "developer", "married", "2 children"];
+// const [name, lastName, age, job, ...personal] = nameData;
+// const personalInfo = personal;
+// console.log(name);
+// console.log(lastName);
+// console.log(age);
+// console.log(job);
+// console.log(personalInfo);
