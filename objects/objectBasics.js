@@ -13,8 +13,24 @@
 // person[age] = 38;
 // console.log(person);
 
-const propKey = "field 12";
-const person = {
-  [propKey]: "Max",
+// const propKey = "field 12";
+// const person = {
+//   [propKey]: "Max",
+// };
+// console.log(person["field 12"]);
+
+// const person = {
+//   name: "rosely",
+//   lastName: "de los santos",
+//   age: 28,
+// };
+// console.log(person);
+
+const age = "age";
+const number = 30;
+
+const otherPerson = {
+  name: "rosely",
+  [age]: [number],
 };
-console.log(person["field 12"]);
+console.log(otherPerson);
