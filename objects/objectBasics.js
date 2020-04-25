@@ -26,11 +26,29 @@
 // };
 // console.log(person);
 
-const age = "age";
-const number = 30;
+// const age = "age";
+// const number = 30;
 
-const otherPerson = {
-  name: "rosely",
-  [age]: [number],
+// const otherPerson = {
+//   name: "rosely",
+//   [age]: [number],
+// };
+// console.log(otherPerson);
+
+const person = {
+  // original object
+  name: "omar",
+  lastName: "Vega",
+  hobbies: ["chess", "computers", "jujisu"],
+  //spread does not create a copy of nested elements in an object
+  //if you make changes to the copy ex person 2 the elements will reflecto on the original object
 };
-console.log(otherPerson);
+console.log(person);
+const person2 = { ...person }; //spread object
+console.log(person2);
+
+const person3 = { ...person, hobbies: [...person.hobbies] };
+//in order to do a full copy of nested objects you must define the key value pair in the
+//new nested object
+person3.hobbies.push("anotherone");
+console.log(person3);
